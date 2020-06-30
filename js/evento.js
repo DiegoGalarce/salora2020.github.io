@@ -1,7 +1,4 @@
 function revisar(elemento) {
-    //console.log("ejecutando la funcion");
-    //console.log(document.getElementById("nombre").value)
-    //let elemento = document.getElementById("nombre");
     if (elemento.value == "") {
         elemento.className = "form-control is-invalid"
         return false;
@@ -11,7 +8,6 @@ function revisar(elemento) {
     }
 }
 function validarEmail(input) {
-    //emilse@gmail.com.ar expresiones regulares
     let expresion = /\w+@\w+\.[a-z]{2,}$/;
     if (input.value != "" && expresion.test(input.value)) {
         input.className = "form-control is-valid";
@@ -36,9 +32,9 @@ function validarGeneral(event) {
         validarConsulta(document.getElementById("consulta"))
     ) {
         enviarEmail();
-        
+
     } else {
-        alert("Se produjo un error en el envio de mail")
+        alert("Se produjo un Error en el Envio")
     }
 }
 function enviarEmail() {
@@ -50,12 +46,14 @@ function enviarEmail() {
     let service_id = "default_service";
     let template_id = "template_sEfoCHH2";
     emailjs.send(service_id, template_id, template_params).then(
-        function (response){
-        document.getElementById("msjEnvio").className = "alert alert-primary my-4";
-        document.getElementById("msjEnvio").innerText = "Su respuesta fue enviada"
-        },function(error){
+        function (response) {
+            console.log("Respuesta se envio" + response);
+            document.getElementById("msjEnvio").className = "alert alert-warning my-4";
+            document.getElementById("msjEnvio").innerText = "Su respuesta fue enviada"
+        }, function (error) {
+            console.log("Se produjo un error" + error);
             document.getElementById("msjEnvio").className = "alert alert-Danger my-4";
-        document.getElementById("msjEnvio").innerText = "Ocurrio un Error en el Envio"
+            document.getElementById("msjEnvio").innerText = "Ocurrio un Error en el Envio"
         }
     )
 }

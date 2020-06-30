@@ -12,6 +12,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/eaaddafd33.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("user_cO75FCUgZjJuhII3zgxx7");
+        })();
+    </script>
 </head>
 
 <body>
@@ -41,13 +47,14 @@
 
         </nav>
         <article class="container">
-            <section class="card">
+            <section class="">
                 <article class="card-header my-4">
                     <h2>Contacto</h2>
                     <hr>
                     <div class="row">
-                        <div class="card-body col-md-6 col-sm-12">
-                            <h4>Consulte por su Proyecto</h4>
+                        <h6 class="pl-3">Rellena los siguientes campos y te contestaremos tan pronto como nos sea posible.</h6>
+                        <div class="card-body col-sm-12 col-md-6 col-lg-6">
+                            <h6></h6>
                             <form onsubmit="validarGeneral(event)" class="shadow p-3 mb-5 bg-white rounded">
                                 <div class="form-group">
                                     <label>Nombre y Apellido</label>
@@ -68,7 +75,7 @@
                                 <div class="form-group">
                                     <label>Consulta</label>
                                     <textarea class="form-control" rows="10" id="consulta"
-                                        placeholder="Ingrese su consulta, un minimo de 10 caracteres"
+                                        placeholder="Ingrese su consulta minimo 10 carateres"
                                         onblur="validarConsulta(this)"></textarea>
                                     <div class="invalid-feedback">Por favor ingrese una consulta con una cantidad minima
                                         de 10 carateres</div>
@@ -76,6 +83,7 @@
                                         Ingreso correctamente su consulta
                                     </div>
                                 </div>
+
                                 <button type="submit" class="btn btn-primary">
                                     Enviar
                                 </button>
@@ -84,7 +92,9 @@
                                 A simple primary alert—check it out!
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12 py-5">
+                        <div class="col-sm-12 col-md-6 col-lg-6 my-5">
+                            <img class="w-100 p-3 mb-5" src="img/dg.jpg"
+                                alt="logo con iniciales del titular de la cuenta">
                         </div>
                     </div>
                 </article>
